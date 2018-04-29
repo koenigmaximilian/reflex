@@ -157,11 +157,10 @@ library
   if flag(experimental-dependent-sum-instances)
     ghc-options: -DEXPERIMENTAL_DEPENDENT_SUM_INSTANCES
 
-  if flag(fast-weak) && impl(ghcjs)
+  if flag(fast-weak)
     ghc-options: -DGHCJS_FAST_WEAK
 
-  if impl(ghcjs)
-    build-depends: ghcjs-base
+  build-depends: ghcjs-base
 
 test-suite semantics
   type: exitcode-stdio-1.0
